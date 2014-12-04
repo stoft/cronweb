@@ -1,0 +1,37 @@
+<h2>Edit Job</h2>
+<form class="form-horizontal" action="/cronjob/<%= @cron_job.id %>" method="post">
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">Job Name</label>
+    <div class="col-sm-10">
+      <input type="hidden" name="_method" value="PATCH">
+      <input type="hidden" name="version" value="<%= @cron_job.version %>">
+      <input type="text" class="form-control" value="<%= @cron_job.name %>" name="name" placeholder="Job Name" required="required">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">Job Description</label>
+    <div class="col-sm-10">
+      <textarea id="description" placeholder="Job description..." class="form-control" name="description" cols="30" rows="10" required="required"><%= @cron_job.description %></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="cron_schedule" class="col-sm-2 control-label">Job Schedule</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="cron_schedule" id="cron_schedule" value="<%= @cron_job.cron_schedule %>" placeholder="Job Schedule">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="command" class="col-sm-2 control-label">Command</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="command" placeholder="Command" value="<%= @cron_job.command %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-warning">Update</button>
+    </div>
+  </div>
+</form>

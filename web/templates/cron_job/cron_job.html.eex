@@ -1,0 +1,37 @@
+<div class="row">
+
+  <div class="col-md-12">
+    <%= if @action == "delete" do %>
+    <h2>Are you sure you want to delete <%= @cron_job.name %>??</h2>
+    <%= else %>
+    <h2><%= @cron_job.name %></h2>
+    <%= end %>
+    <h4>
+      <span class="label label-success">
+        <%= @cron_job.cron_schedule %>
+      </span> &nbsp;
+      <span class="label label-default">
+        <%= @cron_job.command %>
+      </span>
+    </h4>
+  </div>
+
+  <div class="col-md-12">
+    <p>
+    <%= @cron_job.description %>
+    </p>
+  </div>
+
+  <div class="col-md-12">
+    <form action="<%= cron_job_path(:destroy, @cron_job.id) %>" method="post">
+    <input type="hidden" name="version" value="<%= @cron_job.version %>">
+    <a href="/" class="btn btn-success">Back</a>
+    <%= if @action == "delete" do %>
+      <input type="hidden" name="_method" value="DELETE">
+      <!-- <input type="hidden" name="id" value="<%= @cron_job.id %>"> -->
+      <button type="submit" class="btn btn-danger pull-right">Delete</button>
+    <%= end %>
+    </form>
+  </div>
+
+</div>
