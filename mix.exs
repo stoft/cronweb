@@ -13,7 +13,7 @@ defmodule Cronweb.Mixfile do
   def application do
     [
       mod: { Cronweb, [] },
-      applications: [:phoenix, :cowboy, :logger]
+      applications: [:phoenix, :cowboy, :logger, :leader_cron]
     ]
   end
 
@@ -25,7 +25,8 @@ defmodule Cronweb.Mixfile do
   defp deps do
     [
       {:phoenix, "0.4.1"},
-      {:cowboy, "~> 1.0.0"}
+      {:cowboy, "~> 1.0.0"},
+      {:leader_cron, github: "jeraymond/leader_cron"}
     ]
   end
 end

@@ -6,6 +6,7 @@ defmodule Cronweb.CronJob do
          command: "",
               id: "",
            class: "Cron",
-         version:  0
+         version:  0,
+          active: false
   
 end

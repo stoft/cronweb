@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-12">
     <h1>New Job</h1>
-    <form class="form-horizontal" method="post" action="/cronjob" name="newJob">
+    <form class="form-horizontal" method="post" action="/cronjobs" name="newJob">
 
       <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Job Name</label>
@@ -13,7 +13,7 @@
       <div class="form-group">
         <label for="description" class="col-sm-2 control-label">Job Description</label>
         <div class="col-sm-10">
-          <textarea id="description" placeholder="Job description..." class="form-control" name="description" cols="30" rows="10" required="required"></textarea>
+          <textarea id="description" placeholder="Job description..." class="form-control" name="description" cols="30" rows="4" required="required"></textarea>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 <h2>Edit Job</h2>
-<form class="form-horizontal" action="/cronjob/<%= @cron_job.id %>" method="post">
+<form class="form-horizontal" action="/cronjobs/<%= @cron_job.id %>" method="post">
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">Job Name</label>
     <div class="col-sm-10">
@@ -26,6 +26,7 @@
     <label for="command" class="col-sm-2 control-label">Command</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="command" placeholder="Command" value="<%= @cron_job.command %>">
+      <input type="hidden" name="active" value="<%= @cron_job.active %>">
     </div>
   </div>
 
